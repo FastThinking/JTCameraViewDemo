@@ -11,7 +11,9 @@ import android.graphics.RectF;
 import android.graphics.SurfaceTexture;
 import android.graphics.YuvImage;
 import android.hardware.Camera;
+
 import androidx.core.view.ViewCompat;
+
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.Size;
@@ -610,7 +612,9 @@ public class JTCameraView extends TextureView {
                         faceMatrix.mapRect(rectF, new RectF(faces[i].rect));
                         translatedfaces[i] = new Face(faces[i], rectF);
                     }
-                    mListener.onGetFaces(translatedfaces);
+                    if (mListener != null) {
+                        mListener.onGetFaces(translatedfaces);
+                    }
                 }
             });
             mCamera.startFaceDetection();
