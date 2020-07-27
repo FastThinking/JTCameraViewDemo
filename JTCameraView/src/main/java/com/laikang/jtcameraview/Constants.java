@@ -1,7 +1,7 @@
 package com.laikang.jtcameraview;
 
 
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 
 public interface Constants {
 
